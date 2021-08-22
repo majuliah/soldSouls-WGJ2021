@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] MenuNavigationController mainMenu;
     [SerializeField] GameOverMenuController gameOverMenu;
     [SerializeField] GameObject gameHud;
+    //add sound
     
     
     void OnEnable()
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameOverMenu);
         DontDestroyOnLoad(mainMenu);
         DontDestroyOnLoad(eventSystem);
+        //audio manager aq tb
         gameHud.SetActive(false);
         gameOverMenu.onTouchAnyKey += LoadMainScene;
         gameOverMenu.gameObject.SetActive(false);
