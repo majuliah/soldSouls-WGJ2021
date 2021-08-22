@@ -75,7 +75,9 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         foodController.CleanFoods();
+        mainMenu.gameObject.SetActive(false);
         gameHud.SetActive(false);
+        gameOverMenu.gameObject.SetActive(false);
         gameController.StopGame();
         Load(Scene.EndScene);
     }
