@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,13 +11,16 @@ public class GameManager : MonoBehaviour
     {
         MainScene,
         SampleScene,
-        EndScene
+        EndScene,
+        LoadingScene
     }
+    
     [SerializeField] GameController gameController;
     [SerializeField] FoodController foodController;
+    [SerializeField] GameObject eventSystem;
     [SerializeField] GalatiCat playerController;
-    [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject gameOverMenu;
+    [SerializeField] MenuNavigationController mainMenu;
+    [SerializeField] GameOverMenuController gameOverMenu;
     [SerializeField] GameObject gameHud;
     
     
@@ -26,7 +30,19 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameController);
         DontDestroyOnLoad(foodController);
         DontDestroyOnLoad(gameHud);
+        DontDestroyOnLoad(gameOverMenu);
+        DontDestroyOnLoad(mainMenu);
+        DontDestroyOnLoad(eventSystem);
         gameHud.SetActive(false);
+        gameOverMenu.onTouchAnyKey += LoadMainScene;
+        gameOverMenu.gameObject.SetActive(false);
+    }
+
+    void LoadMainScene()
+    {
+        mainMenu.gameObject.SetActive(true);
+        gameOverMenu.gameObject.SetActive(false);
+        Load(Scene.LoadingScene);
     }
 
     void Load(Scene scene)
@@ -39,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         // playerController.CanMove(true);
-        mainMenu.SetActive(false);
+        mainMenu.gameObject.SetActive(false);
         gameHud.SetActive(true);
         Load(Scene.SampleScene);
         gameController.StartGame();
@@ -60,8 +76,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 1;
-        gameOverMenu.SetActive(true);
-        // playerController.CanMove(false);
+        gameOverMenu.gameObject.SetActive(true);
+        gameHud.SetActive(false);
     }
 
     // Ao achar todos os itens do mundo

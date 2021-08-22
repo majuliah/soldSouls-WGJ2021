@@ -32,6 +32,7 @@ public class GalatiCat : MonoBehaviour
         if (other.gameObject.CompareTag("food"))
         {
             _foodController.CheckIfEnds(other.gameObject.name.Split('(')[0]);
+            Destroy(other.gameObject);
         }
     }
 
