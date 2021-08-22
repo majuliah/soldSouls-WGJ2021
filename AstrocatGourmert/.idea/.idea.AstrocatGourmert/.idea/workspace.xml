@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="91c08271-02c0-4474-a27e-6a288460539a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AstrocatGourmert/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AstrocatGourmert/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AstrocatGourmert/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AstrocatGourmert/.idea/workspace.xml" afterDir="false" />
@@ -25,6 +26,9 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
 >>>>>>> 7ed564ce0644a5ddf565a94e6da5e4f4d13f3162
     </list>
+=======
+    <list default="true" id="91c08271-02c0-4474-a27e-6a288460539a" name="Default Changelist" comment="" />
+>>>>>>> parent of 1a8e51e (i dunno)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
 =======
     <property name="node.js.detected.package.eslint" value="true" />
@@ -74,6 +79,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
 >>>>>>> 7ed564ce0644a5ddf565a94e6da5e4f4d13f3162
+=======
+    <property name="settings.editor.selected.configurable" value="Inspections-IDEA" />
+>>>>>>> parent of 1a8e51e (i dunno)
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -105,12 +113,16 @@
 <<<<<<< HEAD
       <updated>1629581914155</updated>
       <workItem from="1629582019466" duration="3072000" />
+<<<<<<< HEAD
       <workItem from="1629593944028" duration="2778000" />
 =======
       <updated>1629579741353</updated>
       <workItem from="1629579752571" duration="16810000" />
       <workItem from="1629638238587" duration="5850000" />
 >>>>>>> 7ed564ce0644a5ddf565a94e6da5e4f4d13f3162
+=======
+      <workItem from="1629593944028" duration="649000" />
+>>>>>>> parent of 1a8e51e (i dunno)
     </task>
     <servers />
   </component>

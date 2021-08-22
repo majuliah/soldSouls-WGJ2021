@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using GameLogic;
 using UnityEngine;
 
-
 public class GalatiCat : MonoBehaviour
 {
     public float moveSpeed;
