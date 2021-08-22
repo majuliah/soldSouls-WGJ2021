@@ -1,19 +1,16 @@
+using GameLogic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuNavigationController : MonoBehaviour
 {
-    [SerializeField] Button _button;
-    [SerializeField] GameObject _destination;
+    [SerializeField] public Button _button;
+    [SerializeField] GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        _button.onClick.AddListener(() =>
-        {
-            _destination.SetActive(true);
-            gameObject.SetActive(false);
-        });
+        _button.onClick.AddListener(_gameManager.InitGame);
     }
     
 }

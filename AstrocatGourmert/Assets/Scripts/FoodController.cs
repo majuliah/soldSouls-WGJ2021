@@ -40,8 +40,11 @@ namespace GameLogic
         [SerializeField] List<CollectFood> _collectFoods;
         [SerializeField] GameManager _gameManager;
 
+        List<GameObject> foods;
+
         void OnEnable()
         {
+            foods = new List<GameObject>();
             DontDestroyOnLoad(gameObject);
         }
         
@@ -53,6 +56,7 @@ namespace GameLogic
                 var instantiate = Instantiate(food.foodObject,transform);
                 instantiate.transform.position = RandomPosition();
                 instantiate.SetActive(true);
+                foods.Add(instantiate.gameObject);
             }
         }
 
@@ -77,7 +81,7 @@ namespace GameLogic
             foreach (var food in _foodList.Where(food => food.foodName.ToString() == foodName))
             {
                 food.collected = true;
-                food.foodObject.SetActive(false);
+                
             }
             
             if (_foodList.Any(food => !food.collected))
