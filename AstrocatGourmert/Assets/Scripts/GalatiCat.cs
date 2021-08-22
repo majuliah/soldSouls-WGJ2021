@@ -12,10 +12,13 @@ public class GalatiCat : MonoBehaviour
 
     public Rigidbody rig;
     FoodController _foodController;
+    AudioManager _audioManager;
 
     void OnEnable()
     {
         _foodController = FindObjectOfType<FoodController>();
+        
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update() {
@@ -55,15 +58,15 @@ public class GalatiCat : MonoBehaviour
         dir.y = rig.velocity.y;
 
         rig.velocity = dir;
-        
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     void Jump()
     {
         if(CanJump())
         {
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            FindObjectOfType<AudioManager>().Play("playerJump");
+            _audioManager.Play("playerJump");
         }
     }
 

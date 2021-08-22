@@ -5,17 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    public AudioManager instance;
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -28,7 +19,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    void Start()
     {
         Play("gamePlayMusic");
     }
@@ -43,5 +34,18 @@ public class AudioManager : MonoBehaviour
         }
             
         s.source.Play();
+    }
+
+    public void StopAll()
+    {
+        foreach (var sound in  sounds)
+        {
+            if (sound == null)
+            {
+                Debug.LogWarning("Sound: " + name + " not found!");
+                return;
+            }
+            sound.source.Stop();
+        }
     }
 }

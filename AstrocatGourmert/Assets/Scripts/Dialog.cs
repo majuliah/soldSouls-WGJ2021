@@ -26,7 +26,6 @@ namespace GameLogic
         IEnumerator StartDialog()
         {
             var count = 0;
-            var time = 3;
             while (true)
             {
                 buildNextDialog(count);

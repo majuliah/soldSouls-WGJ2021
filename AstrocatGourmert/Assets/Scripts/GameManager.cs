@@ -9,7 +9,6 @@ namespace GameLogic
 {
     public class GameManager : MonoBehaviour
     {
-<<<<<<< HEAD
         public enum Scene
         {
             MainScene,
@@ -25,6 +24,7 @@ namespace GameLogic
         [SerializeField] GameOverMenuController gameOverMenu;
         [SerializeField] GameObject gameHud;
         [SerializeField] Dialog dialog;
+        [SerializeField] AudioManager audioManager;
 
         void OnEnable()
         {
@@ -37,6 +37,7 @@ namespace GameLogic
             DontDestroyOnLoad(mainMenu);
             DontDestroyOnLoad(eventSystem);
             DontDestroyOnLoad(dialog);
+            DontDestroyOnLoad(audioManager);
             gameHud.SetActive(false);
             dialog.gameObject.SetActive(false);
             dialog.onDialogFinish += InitGame;
@@ -44,36 +45,7 @@ namespace GameLogic
             EndGameMenuController.onTouchAnyKey += LoadMainScene;
             gameOverMenu.gameObject.SetActive(false);
         }
-=======
-        MainScene,
-        SampleScene,
-        EndScene,
-        LoadingScene
-    }
-    
-    [SerializeField] GameController gameController;
-    [SerializeField] FoodController foodController;
-    [SerializeField] GameObject eventSystem;
-    [SerializeField] MenuNavigationController mainMenu;
-    [SerializeField] GameOverMenuController gameOverMenu;
-    [SerializeField] GameObject gameHud;
 
-    void OnEnable()
-    {
-        Time.timeScale = 1;
-        DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(gameController);
-        DontDestroyOnLoad(foodController);
-        DontDestroyOnLoad(gameHud);
-        DontDestroyOnLoad(gameOverMenu);
-        DontDestroyOnLoad(mainMenu);
-        DontDestroyOnLoad(eventSystem);
-        gameHud.SetActive(false);
-        gameOverMenu.onTouchAnyKey += LoadMainScene;
-        EndGameMenuController.onTouchAnyKey += LoadMainScene;
-        gameOverMenu.gameObject.SetActive(false);
-    }
->>>>>>> 0fe4110a4fc688360b7dce27ade0166eabc3a7ef
 
         void LoadMainScene()
         {
@@ -99,6 +71,7 @@ namespace GameLogic
 
         public void InitDialog()
         {
+            audioManager.StopAll();
             dialog.gameObject.SetActive(true);
             Load(Scene.Cena1);
             mainMenu.gameObject.SetActive(false);
@@ -107,6 +80,8 @@ namespace GameLogic
         // Ao finalizar o tempo
         public void GameOver()
         {
+            audioManager.StopAll();
+            audioManager.Play("defeat");
             foodController.CleanFoods();
             gameOverMenu.gameObject.SetActive(true);
             gameHud.SetActive(false);
@@ -115,6 +90,8 @@ namespace GameLogic
         // Ao achar todos os itens do mundo
         public void EndGame()
         {
+            audioManager.StopAll();
+            audioManager.Play("win");
             foodController.CleanFoods();
             mainMenu.gameObject.SetActive(false);
             gameHud.SetActive(false);
