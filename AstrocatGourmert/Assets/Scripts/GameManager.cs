@@ -23,11 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] MenuNavigationController mainMenu;
     [SerializeField] GameOverMenuController gameOverMenu;
     [SerializeField] GameObject gameHud;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 9397d678d07f1eb3fa5f345e257a8de4c3e2be35
     void OnEnable()
     {
         Time.timeScale = 1;
