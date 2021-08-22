@@ -45,3 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
   foodController: {fileID: 0}
+  eventSystem: {fileID: 0}
+  playerController: {fileID: 0}
+  mainMenu: {fileID: 0}
+  gameOverMenu: {fileID: 0}
+  gameHud: {fileID: 0}

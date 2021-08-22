@@ -18,14 +18,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameController gameController;
     [SerializeField] FoodController foodController;
     [SerializeField] GameObject eventSystem;
-    [SerializeField] GalatiCat playerController;
     [SerializeField] MenuNavigationController mainMenu;
     [SerializeField] GameOverMenuController gameOverMenu;
     [SerializeField] GameObject gameHud;
     
-    
     void OnEnable()
     {
+        Time.timeScale = 1;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(gameController);
         DontDestroyOnLoad(foodController);
@@ -35,6 +34,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(eventSystem);
         gameHud.SetActive(false);
         gameOverMenu.onTouchAnyKey += LoadMainScene;
+        EndGameMenuController.onTouchAnyKey += LoadMainScene;
         gameOverMenu.gameObject.SetActive(false);
     }
 
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         Load(Scene.LoadingScene);
     }
 
+
     void Load(Scene scene)
     {
         SceneManager.LoadScene(scene.ToString());
@@ -53,29 +54,17 @@ public class GameManager : MonoBehaviour
     // Ao iniciar o jogo
     public void InitGame()
     {
-        Time.timeScale = 1;
-        // playerController.CanMove(true);
         mainMenu.gameObject.SetActive(false);
         gameHud.SetActive(true);
-        Load(Scene.SampleScene);
+        // Load(Scene.SampleScene);
         gameController.StartGame();
         foodController.SpawFoods();
     }
 
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void ReturnGame()
-    {
-        Time.timeScale = 1;
-    }
-    
     // Ao finalizar o tempo
     public void GameOver()
     {
-        Time.timeScale = 1;
+        foodController.CleanFoods();
         gameOverMenu.gameObject.SetActive(true);
         gameHud.SetActive(false);
     }
@@ -83,6 +72,7 @@ public class GameManager : MonoBehaviour
     // Ao achar todos os itens do mundo
     public void EndGame()
     {
+        foodController.CleanFoods();
         gameHud.SetActive(false);
         gameController.StopGame();
         Load(Scene.EndScene);
