@@ -3,7 +3,22 @@ guid: 0bfc4df2140673b4aba69e5fd951c29b
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tampa
+    second: {fileID: 2100000, guid: 8a74d9a4b7201c24384909ccbf1786b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: geleia
+    second: {fileID: 2100000, guid: e030ec50de3ae024a84dfb8b4d3df5bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vidro
+    second: {fileID: 2100000, guid: 8273e4ae9983a7e418bc3a2944924de8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
