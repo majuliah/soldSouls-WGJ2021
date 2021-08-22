@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,9 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] MenuNavigationController mainMenu;
     [SerializeField] GameOverMenuController gameOverMenu;
     [SerializeField] GameObject gameHud;
-    //add sound
-    
-    
+
     void OnEnable()
     {
         DontDestroyOnLoad(gameObject);
@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameOverMenu);
         DontDestroyOnLoad(mainMenu);
         DontDestroyOnLoad(eventSystem);
-        //audio manager aq tb
         gameHud.SetActive(false);
         gameOverMenu.onTouchAnyKey += LoadMainScene;
         gameOverMenu.gameObject.SetActive(false);
@@ -89,5 +88,6 @@ public class GameManager : MonoBehaviour
         gameController.StopGame();
         Load(Scene.EndScene);
     }
+    
 }
 }
