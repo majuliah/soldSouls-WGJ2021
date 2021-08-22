@@ -91,5 +91,13 @@ namespace GameLogic
 
             _gameManager.EndGame();
         }
+
+        public void CleanFoods()
+        {
+            foreach (var food in foods)
+            {
+                Destroy(food);
+            }
+        }
     }
 }
