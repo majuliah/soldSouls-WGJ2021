@@ -9,6 +9,7 @@ public class GalatiCat : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpForce;
+    bool isJumping;
 
     public Rigidbody rig;
     FoodController _foodController;
@@ -19,12 +20,20 @@ public class GalatiCat : MonoBehaviour
     }
 
     void Update() {
+        
         Move();
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            isJumping = true;
         }
+    }
+
+    void FixedUpdate()
+    {
+        if (!isJumping) return;
+        Jump();
+        isJumping = false;
     }
 
     void OnCollisionEnter(Collision other)
