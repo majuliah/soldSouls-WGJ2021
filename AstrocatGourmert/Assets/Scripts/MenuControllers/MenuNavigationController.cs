@@ -4,13 +4,15 @@ using UnityEngine.UI;
 
 public class MenuNavigationController : MonoBehaviour
 {
-    [SerializeField] public Button _button;
+    [SerializeField] public Button playButton;
+    [SerializeField] public Button creditosButton;
     [SerializeField] GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        _button.onClick.AddListener(_gameManager.InitGame);
+        playButton.onClick.AddListener(_gameManager.InitGame);
+        creditosButton.onClick.AddListener(_gameManager.EndGame);
     }
     
 }
