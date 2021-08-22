@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<module version="4">
+=======
 <module type="RIDER_MODULE" version="4">
+>>>>>>> dd1ae543c3f3678f73d95fe8cd109c030beb0c2f
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../.." />
     <orderEntry type="sourceFolder" forTests="false" />
