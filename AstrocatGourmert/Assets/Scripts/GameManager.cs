@@ -9,6 +9,7 @@ namespace GameLogic
 {
     public class GameManager : MonoBehaviour
     {
+<<<<<<< HEAD
         public enum Scene
         {
             MainScene,
@@ -43,6 +44,36 @@ namespace GameLogic
             EndGameMenuController.onTouchAnyKey += LoadMainScene;
             gameOverMenu.gameObject.SetActive(false);
         }
+=======
+        MainScene,
+        SampleScene,
+        EndScene,
+        LoadingScene
+    }
+    
+    [SerializeField] GameController gameController;
+    [SerializeField] FoodController foodController;
+    [SerializeField] GameObject eventSystem;
+    [SerializeField] MenuNavigationController mainMenu;
+    [SerializeField] GameOverMenuController gameOverMenu;
+    [SerializeField] GameObject gameHud;
+
+    void OnEnable()
+    {
+        Time.timeScale = 1;
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameController);
+        DontDestroyOnLoad(foodController);
+        DontDestroyOnLoad(gameHud);
+        DontDestroyOnLoad(gameOverMenu);
+        DontDestroyOnLoad(mainMenu);
+        DontDestroyOnLoad(eventSystem);
+        gameHud.SetActive(false);
+        gameOverMenu.onTouchAnyKey += LoadMainScene;
+        EndGameMenuController.onTouchAnyKey += LoadMainScene;
+        gameOverMenu.gameObject.SetActive(false);
+    }
+>>>>>>> 0fe4110a4fc688360b7dce27ade0166eabc3a7ef
 
         void LoadMainScene()
         {
