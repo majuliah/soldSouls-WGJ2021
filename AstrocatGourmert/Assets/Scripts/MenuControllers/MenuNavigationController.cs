@@ -11,7 +11,7 @@ public class MenuNavigationController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playButton.onClick.AddListener(_gameManager.InitGame);
+        playButton.onClick.AddListener(_gameManager.InitDialog);
         creditosButton.onClick.AddListener(_gameManager.EndGame);
     }
     
