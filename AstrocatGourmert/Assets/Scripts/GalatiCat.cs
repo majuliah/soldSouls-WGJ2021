@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using GameLogic;
 using UnityEngine;
 
 public class GalatiCat : MonoBehaviour
@@ -8,7 +10,12 @@ public class GalatiCat : MonoBehaviour
     public float jumpForce;
 
     public Rigidbody rig;
+    FoodController _foodController;
 
+    void OnEnable()
+    {
+        _foodController = FindObjectOfType<FoodController>();
+    }
 
     void Update() {
         Move();
@@ -18,6 +25,15 @@ public class GalatiCat : MonoBehaviour
             Jump();
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("food"))
+        {
+            _foodController.CheckIfEnds(other.gameObject.name.Split('(')[0]);
+        }
+    }
+
 
     void Move ()
     {
