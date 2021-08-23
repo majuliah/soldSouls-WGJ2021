@@ -66,7 +66,7 @@ public class GalatiCat : MonoBehaviour
         if(CanJump())
         {
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            _audioManager.Play("playerJump");
+            _audioManager.Play("jump");
         }
     }
 

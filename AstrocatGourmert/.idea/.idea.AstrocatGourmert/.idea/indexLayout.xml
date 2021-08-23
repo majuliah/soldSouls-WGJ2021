@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelUserStore">
+    <attachedFolders />
+    <explicitIncludes />
+    <explicitExcludes>
+      <Path>.idea</Path>
+      <Path>.vscode</Path>
+      <Path>Gataxica</Path>
+      <Path>Library</Path>
+      <Path>Temp</Path>
+      <Path>kkk</Path>
+      <Path>obj</Path>
+      <Path>teste.app</Path>
+    </explicitExcludes>
+  </component>
+</project>

@@ -8,10 +8,13 @@ namespace GameLogic
     public class Dialog : MonoBehaviour
     {
         [SerializeField] List<GameObject> dialogs;
+        AudioManager _audioManager;
+        
         public Action onDialogFinish;
         void OnEnable()
         {
             onDialogFinish += CleanDialogs;
+            _audioManager = FindObjectOfType<AudioManager>();
             StartCoroutine(StartDialog());
         }
 
@@ -65,6 +68,7 @@ namespace GameLogic
             if (count <= dialogs.Count)
             {
                 dialogs[count].gameObject.SetActive(true);
+                _audioManager.Play("dialogo");
             }
         }
     }

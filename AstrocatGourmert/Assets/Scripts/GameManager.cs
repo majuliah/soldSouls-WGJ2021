@@ -49,6 +49,8 @@ namespace GameLogic
 
         void LoadMainScene()
         {
+            audioManager.StopAll();
+            audioManager.Play("gamePlayMusic");
             mainMenu.gameObject.SetActive(true);
             gameOverMenu.gameObject.SetActive(false);
             Load(Scene.LoadingScene);

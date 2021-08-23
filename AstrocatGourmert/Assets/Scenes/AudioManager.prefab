@@ -54,13 +54,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d42eda94f41a61b4c853cd8e055ad25a, type: 3}
     volume: 0.21
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
-  - name: coletar
+  - name: collect
     clip: {fileID: 8300000, guid: f016b5f4e3b8e4ae2a85cbedcfb462cf, type: 3}
     volume: 0.21
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: defeat
     clip: {fileID: 8300000, guid: 8a459a08a1c234a0e9bf24ab32a7d7ce, type: 3}
@@ -78,11 +78,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 10d466511c6494ca7b1e3a85ba1d97aa, type: 3}
     volume: 0.21
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: dialogo
     clip: {fileID: 8300000, guid: 4cc7bce7815084c8eb1e2803ae314265, type: 3}
     volume: 0.21
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
